@@ -4,9 +4,63 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='../static/styles/bootstrap.css') }}"
+    />
+
+    <title>Track Your Code</title>
   </head>
-  <body>
-    Index
+  <body class="bg-dark">
+    <section class="container">
+      <h1 class="text-center mt-5 mb-5 text-light">
+        Receba o status da sua entrega via SMS
+      </h1>
+      <div class="d-flex justify-content-center">
+        <form
+          class="needs-validation"
+          action="{{url_for('sent')}}"
+          method="get"
+        >
+          <div class="mb-3">
+            <input
+              class="form-control"
+              type="text"
+              name="code"
+              placeholder="Insira aqui o código de rastreio dos correios"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              class="form-control"
+              type="text"
+              name="cellphone"
+              placeholder="Insira aqui o seu número de celular"
+              required
+            />
+          </div>
+          <p class="text-light">O número precisa ser no formato +55991345411</p>
+          <div class="col-md-12 mb-3 form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="sms"
+              id="sms"
+              required
+            />
+            <label class="form-check-label text-light" for="sms"
+              >Aceito receber os status via sms</label
+            >
+          </div>
+          <div class="col-md-12 text-center">
+            <button class="btn btn-primary text-light" type="submit">
+              Solicitar Status
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
   </body>
 </html>

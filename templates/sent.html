@@ -4,7 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='../static/styles/bootstrap.css') }}"
+    />
+    <title>Tracking Code Sent</title>
   </head>
-  <body></body>
+  <body class="bg-dark">
+    <div class="container">
+      <h1 class="text-center mt-5 mb-5 text-light">
+        Pesquisa feita e sms enviado :)
+      </h1>
+      <p class="text-light text-center">
+        Pode ser que o SMS demore alguns segundos para chegar.
+      </p>
+
+      <a class="d-flex justify-content-center" href="/"
+        ><button class="btn btn-primary">Fazer Outra Busca</button></a
+      >
+    </div>
+  </body>
 </html>
